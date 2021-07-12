@@ -22,6 +22,10 @@ function Pulley(p, pulleyMass, pulleyRadius, color) {
       pulley.radius = pulleyMaxRadius;
       inputPulleyRadius.value(pulleyMaxRadius);
     }
+    if (pulley.radius < pulleyMinRadius) {
+      pulley.radius = pulleyMinRadius;
+      inputPulleyRadius.value(pulleyMinRadius);
+    }
     // Initialize angle to 0 rad
     pulley.angle = 0; // in rad
   };

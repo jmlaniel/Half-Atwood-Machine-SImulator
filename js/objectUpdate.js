@@ -139,7 +139,8 @@ function objectUpdate() {
 
   // Update block 1, 2 and pulley positions and velocities
   // test if Block 1 has reached the left end (which means end of movement)
-  if (block1.pos.x >= pulley.pos.x + block1.width / 2 + 3 * pulley.radius) {
+  let block1XLimit = pulley.pos.x + block1.width / 2 + 1.5 * pulley.radius;
+  if (block1.pos.x >= block1XLimit) {
     block1.pos0 = block1.pos;
     block1.vel0 = block1.vel;
     block1.pos.set(
@@ -156,7 +157,7 @@ function objectUpdate() {
       (block1.vel.x / pulley.radius) * dt +
       ((0.5 * block1.acc.x) / pulley.radius) * dt * dt;
   } else {
-    block1.pos.x = pulley.pos.x + block1.width / 2 + 3 * pulley.radius;
+    block1.pos.x = block1XLimit;
     block1.vel.x = 0;
     simPhase = "pause";
   }

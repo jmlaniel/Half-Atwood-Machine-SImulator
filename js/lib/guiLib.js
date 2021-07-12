@@ -44,69 +44,71 @@ function guiInputsInit(p) {
   let cr0 = coordConv(p, r0);
   let x0 = cr0.x + textX0Shift;
   let y0 = cr0.y + textY0Shift;
-  let dx = 160;
+  let dx = 220;
   let dy = 0;
   let yStep = fontSizeBold + 2 * interLine;
   let buttonLength = 70;
   let buttonHeight = 30;
-  let sliderLenght = 100;
+  let sliderLength = 110;
   let sliderHeight = 30;
+  let inputLenght = 40;
+  let inputHeight = 18;
 
   // Block 1 Mass input (initial value defined as global variable)
   dy = -fontSizeRegular;
   inputBlock1Mass = p.createInput("");
   inputBlock1Mass.position(x0 + dx, y0 + dy);
-  inputBlock1Mass.size(50, 22);
+  inputBlock1Mass.size(inputLenght, inputHeight);
   inputBlock1Mass.value(block1InitMass);
 
   // Block 2 Mass input (initial value defined as global variable)
   dy += yStep;
   inputBlock2Mass = p.createInput("");
   inputBlock2Mass.position(x0 + dx, y0 + dy);
-  inputBlock2Mass.size(50, 22);
+  inputBlock2Mass.size(inputLenght, inputHeight);
   inputBlock2Mass.value(block2InitMass);
 
   // Pulley Mass input (initial value defined as global variable)
   dy += yStep;
   inputPulleyMass = p.createInput("");
   inputPulleyMass.position(x0 + dx, y0 + dy);
-  inputPulleyMass.size(50, 22);
+  inputPulleyMass.size(inputLenght, inputHeight);
   inputPulleyMass.value(pulleyInitMass);
 
   // Pulley Radius input (initial value defined as global variable)
   dy += yStep;
   inputPulleyRadius = p.createInput("");
   inputPulleyRadius.position(x0 + dx, y0 + dy);
-  inputPulleyRadius.size(50, 22);
+  inputPulleyRadius.size(inputLenght, inputHeight);
   inputPulleyRadius.value(pulleyInitRadius);
 
   // Drop height for block 2 input (initial value defined as global variable)
   dy += yStep;
   block2DropHeight = p.createInput("");
   block2DropHeight.position(x0 + dx, y0 + dy);
-  block2DropHeight.size(50, 22);
+  block2DropHeight.size(inputLenght, inputHeight);
   block2DropHeight.value(block2InitDropHeight);
 
   // Static friction coefficient between block 1 and table
   dy += yStep;
   mus = p.createInput("");
   mus.position(x0 + dx, y0 + dy);
-  mus.size(50, 22);
+  mus.size(inputLenght, inputHeight);
   mus.value(musInit);
 
   // Kinetic friction coefficient between block 1 and table
   dy += yStep;
   muc = p.createInput("");
   muc.position(x0 + dx, y0 + dy);
-  muc.size(50, 22);
+  muc.size(inputLenght, inputHeight);
   muc.value(mucInit);
 
   // Slider for animation speed
-  dx += 70;
+  dx += 58;
   dy += 0.8 * yStep;
   animSpeedSlider = p.createSlider(0.1, 1.5, 1.0, 0.1);
   animSpeedSlider.position(x0 + dx, y0 + dy);
-  animSpeedSlider.size(sliderLenght, sliderHeight);
+  animSpeedSlider.size(sliderLength, sliderHeight);
   animSpeedSlider.style("accentColor", "black");
 
   // Setup Run Button
@@ -179,7 +181,11 @@ function guiInputsText(p) {
 
   // Pulley Radius input
   dy += yStep;
-  p.text("Radius of Pulley (m):", x0 + dx, y0 + dy);
+  p.text(
+    "Radius of Pulley (" + pulleyMinRadius + "-" + pulleyMaxRadius + "m):",
+    x0 + dx,
+    y0 + dy
+  );
 
   // Drop height of block 2 input
   dy += yStep;
@@ -187,11 +193,11 @@ function guiInputsText(p) {
 
   // Static frictionnal coefficient
   dy += yStep;
-  p.text("Static friction µs:", x0 + dx, y0 + dy);
+  p.text("Static friction µs (µs ≥ µc):", x0 + dx, y0 + dy);
 
   // Kinetic frictionnal coefficient
   dy += yStep;
-  p.text("Kinetic friction µc:", x0 + dx, y0 + dy);
+  p.text("Kinetic friction µc (µs ≥ µc):", x0 + dx, y0 + dy);
 
   // Kinetic frictionnal coefficient
   dy += yStep;
@@ -199,18 +205,11 @@ function guiInputsText(p) {
 
   // Notes
   dy += yStep;
-  p.text(
-    "Note : µc < µs, Max radius of pulley = " +
-      pulleyMaxRadius +
-      "m, " +
-      " Decimal separator must be : '.'",
-    x0 + dx,
-    y0 + dy
-  );
+  p.text("Note : Decimal separator must be : '.'", x0 + dx, y0 + dy);
 
   // Description of forces
-  let dx1 = 230;
-  let dx2 = 350;
+  let dx1 = 280;
+  let dx2 = 400;
   dx = dx1;
   dy = 0;
   p.stroke(5);

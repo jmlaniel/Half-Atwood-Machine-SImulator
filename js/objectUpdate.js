@@ -77,7 +77,7 @@ function objectUpdate() {
           (block1.mass *
             block2.mass *
             g *
-            (1 + mucNum + (mucNum * pulley.mass) / 2 / block1.mass)) /
+            (1 + mucNum + pulley.mass / 2 / block1.mass)) /
           (block1.mass + block2.mass + pulley.mass / 2);
         T1b.dir.set(-T1, 0);
         T1p.dir.set(+T1, 0);
@@ -97,7 +97,7 @@ function objectUpdate() {
         let mucNum = parseFloat(muc.value());
         fsc.dir.set(mucNum * block1.mass * g, 0);
         block1.acc.set(fsc.dir.x / block1.mass, 0);
-        block2.acc.set(0, (n2.dir.y + block2.mass * g) / block2.mass);
+        block2.acc.set(0, (n2.dir.y - block2.mass * g) / block2.mass);
       }
       break;
   }

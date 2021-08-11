@@ -126,7 +126,7 @@ function objectCreation(p) {
     plotAccHeight,
     "t (s)",
     "a (m/s^2)",
-    "Block 1\nacceleration vs time"
+    "Block 1\nacceleration vs temps"
   );
   plotVel = new Plot(
     p,
@@ -136,7 +136,7 @@ function objectCreation(p) {
     plotVelHeight,
     "t (s)",
     "v (m/s)",
-    "Block 1\nvelocity vs time"
+    "Block 1\nvitesse vs temps"
   );
   plotPos = new Plot(
     p,
@@ -146,6 +146,6 @@ function objectCreation(p) {
     plotPosHeight,
     "t (s)",
     "r (m/s)",
-    "Block 1\nposition vs time"
+    "Block 1\nposition vs temps"
   );
 }

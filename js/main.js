@@ -17,7 +17,7 @@ let motionState = "static";
 let stopperState = "on";
 // canvas size (4:3)
 canvasWidth = 1024;
-canvasHeight = 768;
+canvasHeight = 680;
 // Scene dimensions
 let sceneWidth = 3; // In meters
 let sceneHeight;
@@ -71,7 +71,7 @@ let frictionColor = "purple";
 let plotAccXShift = -0.04; // in m
 let plotAccYShift = 0.8;
 let plotAccWidth = 0.9; //  in m
-let plotAccHeight = 0.9; // in m
+let plotAccHeight = 0.7; // in m
 // Velocity plot
 let plotVelXShift = 0.75; // in m
 let plotVelYShift = plotAccYShift; // in px

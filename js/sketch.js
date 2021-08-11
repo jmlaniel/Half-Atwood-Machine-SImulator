@@ -14,6 +14,8 @@ let runButton, pauseButton, stopButton, animSpeedSlider;
 let sketch = function (p) {
   // p5 setup function
   p.setup = function () {
+    // Set pixel density to 1
+    p.pixelDensity(1);
     // Create canvas using the whole browser window
     canvas = p.createCanvas(canvasWidth, canvasHeight);
     // Compute scene height and scaling factor for the canvas

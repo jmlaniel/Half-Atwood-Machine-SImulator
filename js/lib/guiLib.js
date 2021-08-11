@@ -49,7 +49,7 @@ function guiInputsInit(p) {
   let yStep = fontSizeBold + 2 * interLine;
   let buttonLength = 70;
   let buttonHeight = 30;
-  let sliderLength = 110;
+  let sliderLength = 130;
   let sliderHeight = 30;
   let inputLenght = 40;
   let inputHeight = 18;
@@ -105,7 +105,7 @@ function guiInputsInit(p) {
 
   // Slider for animation speed
   dx += 58;
-  dy += 0.8 * yStep;
+  dy += 1.0 * yStep;
   animSpeedSlider = p.createSlider(0.1, 1.5, 1.0, 0.1);
   animSpeedSlider.position(x0 + dx, y0 + dy);
   animSpeedSlider.size(sliderLength, sliderHeight);
@@ -115,7 +115,7 @@ function guiInputsInit(p) {
   let dx1 = -150;
   dx = dx1;
   dy = 0;
-  runButton = p.createButton("Run");
+  runButton = p.createButton("Démarrer");
   runButton.position(x0 + dx, y0 + dy);
   runButton.size(buttonLength, buttonHeight);
   runButton.mousePressed(function () {
@@ -133,7 +133,7 @@ function guiInputsInit(p) {
 
   // Setup Stop Button
   dy += 1.5 * buttonHeight;
-  stopButton = p.createButton("Stop");
+  stopButton = p.createButton("Arrêt");
   stopButton.position(x0 + dx, y0 + dy);
   stopButton.size(buttonLength, buttonHeight);
   stopButton.mousePressed(function () {
@@ -158,65 +158,65 @@ function guiInputsText(p) {
   p.textSize(fontSizeBold);
   p.textStyle(p.BOLD);
   p.fill("black");
-  p.text("Half-Atwood Machine", 10, 20);
+  p.text("Demi-machine d'Atwood", 10, 20);
   p.textSize(fontSizeRegular);
   p.textStyle(p.NORMAL);
   p.text("JML 2021", 20, 40);
 
   // Block 1 Mass input
-  dx = 20;
+  dx = -10;
   dy = 0;
   p.textSize(fontSizeRegular);
   p.textStyle(p.NORMAL);
   p.fill("black");
-  p.text("Mass of Block 1 (kg):", x0 + dx, y0 + dy);
+  p.text("Masse du block 1 (kg):", x0 + dx, y0 + dy);
 
   // Block 2 Mass input
   dy += yStep;
-  p.text("Mass of Block 2 (kg):", x0 + dx, y0 + dy);
+  p.text("Masse du block 2 (kg):", x0 + dx, y0 + dy);
 
   // Pulley Mass input
   dy += yStep;
-  p.text("Mass of Pulley (kg):", x0 + dx, y0 + dy);
+  p.text("Masse de la poulie (kg):", x0 + dx, y0 + dy);
 
   // Pulley Radius input
   dy += yStep;
   p.text(
-    "Radius of Pulley (" + pulleyMinRadius + "-" + pulleyMaxRadius + "m):",
+    "Rayon de la poulie (" + pulleyMinRadius + "-" + pulleyMaxRadius + "m):",
     x0 + dx,
     y0 + dy
   );
 
   // Drop height of block 2 input
   dy += yStep;
-  p.text("Drop height (m):", x0 + dx, y0 + dy);
+  p.text("Hauteur (m):", x0 + dx, y0 + dy);
 
   // Static frictionnal coefficient
   dy += yStep;
-  p.text("Static friction µs (µs ≥ µc):", x0 + dx, y0 + dy);
+  p.text("Frottement statique µs (µs ≥ µc):", x0 + dx, y0 + dy);
 
   // Kinetic frictionnal coefficient
   dy += yStep;
-  p.text("Kinetic friction µc (µs ≥ µc):", x0 + dx, y0 + dy);
+  p.text("Frottement cinétique µc (µs ≥ µc):", x0 + dx, y0 + dy);
 
   // Kinetic frictionnal coefficient
-  dy += yStep;
-  p.text("Animation Speed (1 = realtime):", x0 + dx, y0 + dy);
+  dy += 1.2 * yStep;
+  p.text("Vitesse de l'animation (1 = temps réel):", x0 + dx, y0 + dy);
 
   // Notes
   dy += yStep;
-  p.text("Note : Decimal separator must be : '.'", x0 + dx, y0 + dy);
+  p.text("Note : Séparator décimal doit être : '.'", x0 + dx, y0 + dy);
 
   // Description of forces
   let dx1 = 280;
-  let dx2 = 400;
+  let dx2 = 420;
   dx = dx1;
   dy = 0;
   p.stroke(5);
   p.textSize(fontSizeRegular);
   p.textStyle(p.NORMAL);
   p.fill(weightColor);
-  p.text("Weight Block 1 :", x0 + dx, y0 + dy);
+  p.text("Poids du block 1 :", x0 + dx, y0 + dy);
   dx = dx2;
   p.stroke(5);
   p.textSize(fontSizeRegular);
@@ -230,7 +230,7 @@ function guiInputsText(p) {
   p.textSize(fontSizeRegular);
   p.textStyle(p.NORMAL);
   p.fill(weightColor);
-  p.text("Weight Block 2 :", x0 + dx, y0 + dy);
+  p.text("Poids du block 2 :", x0 + dx, y0 + dy);
   dx = dx2;
   p.stroke(5);
   p.textSize(fontSizeRegular);
@@ -244,7 +244,7 @@ function guiInputsText(p) {
   p.textSize(fontSizeRegular);
   p.textStyle(p.NORMAL);
   p.fill(normalColor);
-  p.text("Normal Block 1 :", x0 + dx, y0 + dy);
+  p.text("Normale du block 1 :", x0 + dx, y0 + dy);
   dx = dx2;
   // p.fill(weightColor);
   p.text(n1.dir.mag().toFixed(2) + " N ", x0 + dx, y0 + dy);
@@ -255,7 +255,7 @@ function guiInputsText(p) {
   p.textSize(fontSizeRegular);
   p.textStyle(p.NORMAL);
   p.fill(normalColor);
-  p.text("Normal Block 2 :", x0 + dx, y0 + dy);
+  p.text("Normale du block 2 :", x0 + dx, y0 + dy);
   dx = dx2;
   p.text(n2.dir.mag().toFixed(2) + " N ", x0 + dx, y0 + dy);
 
@@ -285,17 +285,15 @@ function guiInputsText(p) {
   p.textSize(fontSizeRegular);
   p.textStyle(p.NORMAL);
   p.fill(frictionColor);
-  p.text("Friction :", x0 + dx, y0 + dy);
+  p.text("Frottement :", x0 + dx, y0 + dy);
   dx = dx2;
   p.text(fsc.dir.mag().toFixed(2) + " N ", x0 + dx, y0 + dy);
 
-  dx = 5 * dx1;
-  dy += yStep;
+  dx = dx2;
+  dy += 1.2 * yStep;
   p.stroke(5);
   p.textSize(fontSizeRegular);
   p.textStyle(p.NORMAL);
   p.fill("black");
-  p.text("Friction :", x0 + dx, y0 + dy);
-  dx = dx2;
   p.text(animSpeedSlider.value().toFixed(1), x0 + dx, y0 + dy);
 }

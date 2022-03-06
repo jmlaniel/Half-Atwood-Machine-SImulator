@@ -169,11 +169,11 @@ function guiInputsText(p) {
   p.textSize(fontSizeRegular);
   p.textStyle(p.NORMAL);
   p.fill("black");
-  p.text("Masse du block 1 (kg):", x0 + dx, y0 + dy);
+  p.text("Masse du bloc 1 (kg):", x0 + dx, y0 + dy);
 
   // Block 2 Mass input
   dy += yStep;
-  p.text("Masse du block 2 (kg):", x0 + dx, y0 + dy);
+  p.text("Masse du bloc 2 (kg):", x0 + dx, y0 + dy);
 
   // Pulley Mass input
   dy += yStep;
@@ -216,7 +216,7 @@ function guiInputsText(p) {
   p.textSize(fontSizeRegular);
   p.textStyle(p.NORMAL);
   p.fill(weightColor);
-  p.text("Poids du block 1 :", x0 + dx, y0 + dy);
+  p.text("Poids du bloc 1 :", x0 + dx, y0 + dy);
   dx = dx2;
   p.stroke(5);
   p.textSize(fontSizeRegular);
@@ -230,7 +230,7 @@ function guiInputsText(p) {
   p.textSize(fontSizeRegular);
   p.textStyle(p.NORMAL);
   p.fill(weightColor);
-  p.text("Poids du block 2 :", x0 + dx, y0 + dy);
+  p.text("Poids du bloc 2 :", x0 + dx, y0 + dy);
   dx = dx2;
   p.stroke(5);
   p.textSize(fontSizeRegular);
@@ -244,7 +244,7 @@ function guiInputsText(p) {
   p.textSize(fontSizeRegular);
   p.textStyle(p.NORMAL);
   p.fill(normalColor);
-  p.text("Normale du block 1 :", x0 + dx, y0 + dy);
+  p.text("Normale du bloc 1 :", x0 + dx, y0 + dy);
   dx = dx2;
   // p.fill(weightColor);
   p.text(n1.dir.mag().toFixed(2) + " N ", x0 + dx, y0 + dy);
@@ -255,7 +255,7 @@ function guiInputsText(p) {
   p.textSize(fontSizeRegular);
   p.textStyle(p.NORMAL);
   p.fill(normalColor);
-  p.text("Normale du block 2 :", x0 + dx, y0 + dy);
+  p.text("Normale du bloc 2 :", x0 + dx, y0 + dy);
   dx = dx2;
   p.text(n2.dir.mag().toFixed(2) + " N ", x0 + dx, y0 + dy);
 
